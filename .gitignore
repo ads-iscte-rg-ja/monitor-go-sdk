@@ -9,3 +9,6 @@
 *.out
 /bin/
 .idea
+# Saídas do CI local (monitor-platform/scripts/ci-local.sh)
+coverage*.out
+golangci-report.xml
