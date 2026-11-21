@@ -13,10 +13,15 @@ Module: `github.com/ads-iscte-rg-ja/monitor-go-sdk` · Package: `monitorsdk`
 3. Give the application access to that same persistent file. Applications and
    remote normally run under the same OS user.
 
-The hello-world module uses the local SDK through a `replace` directive. For
-local work across all repositories, `monitor-platform/scripts/go-work.sh` creates
-a `go.work` in the parent directory. For another application with an existing
-`go.mod` beside `monitor-go-sdk/`, add:
+Released versions are tags (`v0.1.0` onwards):
+
+```sh
+go get github.com/ads-iscte-rg-ja/monitor-go-sdk@v0.1.0
+```
+
+For local work across all repositories, `monitor-platform/scripts/go-work.sh`
+creates a `go.work` in the parent directory. To use an unreleased checkout from
+an application with an existing `go.mod` beside `monitor-go-sdk/`, add:
 
 ```sh
 go mod edit -require=github.com/ads-iscte-rg-ja/monitor-go-sdk@v0.0.0
