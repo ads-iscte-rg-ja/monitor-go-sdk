@@ -1,4 +1,4 @@
-module github.com/rmg-unicage/monitor-go-sdk
+module github.com/ads-iscte-rg-ja/monitor-go-sdk
 
 go 1.25.0
 
