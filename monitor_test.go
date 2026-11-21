@@ -10,7 +10,7 @@ import (
 	"testing"
 	"time"
 
-	monitorsdk "github.com/rmg-unicage/monitor-go-sdk"
+	monitorsdk "github.com/ads-iscte-rg-ja/monitor-go-sdk"
 )
 
 // remoteSchema is the buffer schema owned by monitor-remote. The SDK writes into

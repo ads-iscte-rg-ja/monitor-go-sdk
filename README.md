@@ -4,7 +4,7 @@ A small Go library for writing application logs to the SQLite buffer managed by
 [monitor-remote](../monitor-remote/README.md). Remote handles collection, central
 delivery, retries, and cleanup. The SDK needs no central URL or API key.
 
-Module: `github.com/rmg-unicage/monitor-go-sdk` · Package: `monitorsdk`
+Module: `github.com/ads-iscte-rg-ja/monitor-go-sdk` · Package: `monitorsdk`
 
 ## Setup
 
@@ -13,12 +13,14 @@ Module: `github.com/rmg-unicage/monitor-go-sdk` · Package: `monitorsdk`
 3. Give the application access to that same persistent file. Applications and
    remote normally run under the same OS user.
 
-The repository's `go.work` and hello-world module already use the local SDK.
-For another application with an existing `go.mod` beside `monitor-go-sdk/`, add:
+The hello-world module uses the local SDK through a `replace` directive. For
+local work across all repositories, `monitor-platform/scripts/go-work.sh` creates
+a `go.work` in the parent directory. For another application with an existing
+`go.mod` beside `monitor-go-sdk/`, add:
 
 ```sh
-go mod edit -require=github.com/rmg-unicage/monitor-go-sdk@v0.0.0
-go mod edit -replace=github.com/rmg-unicage/monitor-go-sdk=../monitor-go-sdk
+go mod edit -require=github.com/ads-iscte-rg-ja/monitor-go-sdk@v0.0.0
+go mod edit -replace=github.com/ads-iscte-rg-ja/monitor-go-sdk=../monitor-go-sdk
 ```
 
 Adjust the replacement path to your checkout. After adding the import below,
@@ -35,7 +37,7 @@ import (
     "os"
     "time"
 
-    monitorsdk "github.com/rmg-unicage/monitor-go-sdk"
+    monitorsdk "github.com/ads-iscte-rg-ja/monitor-go-sdk"
 )
 
 func main() {
