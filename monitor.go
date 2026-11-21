@@ -98,9 +98,7 @@ func LogError(ctx context.Context, db *sql.DB, app, environment, level, message 
 	if app == "" || environment == "" || strings.TrimSpace(message) == "" {
 		return 0, fmt.Errorf("application, environment, and message are required")
 	}
-	switch level {
-	case "INFO", "WARN", "ERROR", "CRITICAL", "PANIC":
-	default:
+	if !validLevel(level) {
 		return 0, fmt.Errorf("invalid log level")
 	}
 	var options ErrorDetails
