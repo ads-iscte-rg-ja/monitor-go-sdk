@@ -56,7 +56,7 @@ func main() {
     defer cancel()
 
     id, err := monitorsdk.LogError(ctx, db,
-        "web-api", "production", "ERROR", "Database timeout")
+        "web-api", "production", monitorsdk.LevelError, "Database timeout")
     if err != nil {
         log.Print(err)
         return
@@ -82,7 +82,9 @@ to `ConnectDB`. Reuse the database handle and close it when the application exit
 - **`ErrorDetails`** optionally supplies `StackTrace`, JSON `Metadata`, and the
   original `CreatedAt` timestamp.
 
-Supported levels: **INFO, WARN, ERROR, CRITICAL, PANIC**.
+Supported levels: **INFO, WARN, ERROR, CRITICAL, PANIC**, exported as
+`monitorsdk.LevelInfo` … `monitorsdk.LevelPanic` and, in order of severity,
+`monitorsdk.Levels` (v0.2.0 onwards).
 A successful call means accepted locally; central delivery happens later.
 Records can still be written while remote is stopped, once the file is prepared.
 
