@@ -13,10 +13,10 @@ Module: `github.com/ads-iscte-rg-ja/monitor-go-sdk` · Package: `monitorsdk`
 3. Give the application access to that same persistent file. Applications and
    remote normally run under the same OS user.
 
-Released versions are tags (`v0.1.0` onwards):
+Released versions are tags (`v0.1.0` onwards; the latest is `v0.2.0`):
 
 ```sh
-go get github.com/ads-iscte-rg-ja/monitor-go-sdk@v0.1.0
+go get github.com/ads-iscte-rg-ja/monitor-go-sdk@v0.2.0
 ```
 
 For local work across all repositories, `monitor-platform/scripts/go-work.sh`
